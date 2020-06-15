@@ -3,22 +3,34 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:paddingLeft="20dp"
         android:paddingBottom="10dp">
-        <TextView
-            android:id="@+id/phone"
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/image"
+            android:layout_width="60dp"
+            android:layout_height="60dp">
+
+        </com.android.volley.toolbox.NetworkImageView>
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="xD"
-            android:textSize="24sp"></TextView>
-        <TextView
-            android:id="@+id/nickname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="xDx"></TextView>
-    </LinearLayout>
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xD"
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xDx"/>
+
+        </LinearLayout>
+</LinearLayout>
 </LinearLayout>

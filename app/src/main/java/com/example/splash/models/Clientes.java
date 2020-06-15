@@ -16,18 +16,21 @@ import java.util.ArrayList;
 public class Clientes {
     public String phone;
     public String nickname;
+    public  String urlImage;
 
-    public Clientes(String _phone, String _nickname) {
+    public Clientes(String _phone, String _nickname, String _urlImage) {
         this.phone = _phone;
         this.nickname = _nickname;
+        this.urlImage = _urlImage;
     }
 
     public static ArrayList getCollection() {
         ArrayList<Clientes> collection = new ArrayList<>();
-        collection.add(new Clientes("981999923", "Bichito"));
-        collection.add(new Clientes("9859913923", "Plaga"));
-        collection.add(new Clientes("981914213", "Libelula"));
-        collection.add(new Clientes("964662200", "Deha"));
+        collection.add(new Clientes("981999923", "Bichito", ""));
+        collection.add(new Clientes("9859913923", "Plaga", ""));
+        collection.add(new Clientes("981914213", "Libelula", ""));
+        collection.add(new Clientes("981914213", "Alcachofa", ""));
+        //collection.add(new Clientes("981914213", "Alcachofa", _urlImage: ""));   ERROR NO CARGABA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
         return collection;
     }
@@ -48,7 +51,7 @@ public class Clientes {
                                         for (int i=0; i < list.length(); i++) {
                                             JSONObject o = list.getJSONObject(i);
                                             clientes.add(new Clientes(o.getString("first_name"),
-                                                    o.getString("last_name")));
+                                                    o.getString("last_name"), o.getString("avatar")));
                                         }
 
                                     } catch (JSONException e) {
