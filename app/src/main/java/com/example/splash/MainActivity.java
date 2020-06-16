@@ -1,5 +1,11 @@
 package com.example.splash;
 
+//Integrantes
+
+//Condor Lanazca Cristhian
+//Estrella Vidal Nelson
+//Rodriguez Mercado Yerry
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
