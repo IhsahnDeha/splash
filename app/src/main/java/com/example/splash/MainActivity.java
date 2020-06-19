@@ -8,8 +8,12 @@ package com.example.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.example.splash.adapters.ClientesAdaptador;
@@ -37,7 +41,25 @@ public class MainActivity extends AppCompatActivity {
         clientesList = findViewById(R.id.clientesList);
         clientesAdaptador = new ClientesAdaptador(this, items, queueImage);
         clientesList.setAdapter(clientesAdaptador);
+
+        clientesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // En esta area puedo solicitar mas datos a la nube
+                Clientes registro = items.get(position);
+                showDetails(registro);
+                //Toast.makeText(MainActivity.this, "Persona" + registro.phone,
+                  //      Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+        public void showDetails(Clientes item){
+            Intent o = new Intent(this, ClientesDetalleActivity.class);
+            o.putExtra("clientesId", item.id);
+            startActivity(o);
+        }
 
     public void refreshList(){
         if ( clientesAdaptador!= null ) {
