@@ -9,13 +9,12 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/imgFoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        </com.android.volley.toolbox.NetworkImageView>
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+     <com.example.splash.helpers.CircularImageViewX
+        android:id="@+id/imgFoto"
+         android:layout_width="220dp"
+         android:layout_height="220dp"/>
         <TextView
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
